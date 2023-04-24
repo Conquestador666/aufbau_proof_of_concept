@@ -10,7 +10,15 @@ var numVerticalLines = 10;
 var lineSpacing = 60;
 
 var colorPallete = Array('red','green','blue','yellow');
-var mapColors = 1;
+var mapColors = Array();
+for(i = 0; i <= numHorizontalLines; i++){
+    let row = Array();
+    for(j = 0; j <= numVerticalLines; j++){
+        let color = colorPallete[Math.floor(Math.random()*4)];
+        row.push(color);
+    }
+    mapColors.push(row);
+}
 
 function drawGrid(xOffset,yOffset){
     canvas = document.getElementById('map');
@@ -29,7 +37,7 @@ function drawGrid(xOffset,yOffset){
     //generating fields with random colors
     for(i = 0; i <= numHorizontalLines; i++){
         for(j = 0; j <= numVerticalLines; j++){
-            context.fillStyle = colorPallete[Math.floor(Math.random()*4)];
+            context.fillStyle = mapColors[i][j];
             context.fillRect(
                 xOffset + i*lineSpacing,
                 yOffset + j*lineSpacing,
