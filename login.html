@@ -1,8 +1,33 @@
- <form onsubmit="login()" method="post">
-  <div class="container">
+<html> 
+ <head>
+  <style>
+    body {font-family: Arial, Helvetica, sans-serif;}
+   
+    /* Input Fields */
+    input[type=text]{
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+  </style>
+ </head>
+ <body>
+  <form onsubmit="login()" method="post">
+   <div class="container">
     <label for="uname"><b>Username</b></label>
     <input type="text" placeholder="Enter Username" name="uname" required>
 
     <button type="submit">Login</button>
   </div>
-</form> 
+  </form> 
+ </body>
+</html>
+<script>
+ function login(){
+   event.preventDefault();
+   
+ }
+</script>
